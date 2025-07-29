@@ -1,0 +1,35 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Test') {
+            steps {
+                echo 'Perform test'
+            }
+        }
+        
+        stage('Release') {
+            steps {
+                echo 'Release is going ON'
+            }
+        }
+        
+        stage('Prod') {
+            steps {
+                echo 'This is PROD'
+            }
+        }
+        
+        stage('Live') {
+            steps {
+                echo 'PAN INDIA LIVE'
+            }
+        }
+    }
+    
+    post {
+        always {
+            echo 'Pipeline execution completed'
+        }
+    }
+}
